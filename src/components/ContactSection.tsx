@@ -215,7 +215,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
                   </Alert>
                 )}
 
-                <form name="contact" className="space-y-4" method="POST" onSubmit={handleSubmit} data-netlify="true">
+                <form name="contact" className="space-y-4" method="POST" data-netlify="true">
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="grid grid-cols-1 gap-4">
                     <div className="space-y-2">
