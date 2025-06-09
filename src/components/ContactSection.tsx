@@ -215,13 +215,14 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
                   </Alert>
                 )}
 
-                <form name="contact" className="space-y-4" method="POST" data-netlify="true">
+                <form name="contact" className="space-y-4" method="POST" onSubmit={handleSubmit} data-netlify="true">
+                  <input type="hidden" name="form-name" value="contact" />
                   <div className="grid grid-cols-1 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name</Label>
                       <Input
                         id="name"
-                        name="name"
+                        name="contact"
                         placeholder="Your name"
                         value={formState.name}
                         onChange={handleChange}
@@ -233,7 +234,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
                       <Label htmlFor="email">Email</Label>
                       <Input
                         id="email"
-                        name="email"
+                        name="contact"
                         type="email"
                         placeholder="Your email address"
                         value={formState.email}
@@ -246,7 +247,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
                       <Label htmlFor="subject">Subject</Label>
                       <Input
                         id="subject"
-                        name="subject"
+                        name="contact"
                         placeholder="Subject of your message"
                         value={formState.subject}
                         onChange={handleChange}
@@ -258,7 +259,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
                       <Label htmlFor="message">Message</Label>
                       <Textarea
                         id="message"
-                        name="message"
+                        name="contact"
                         placeholder="Your message"
                         rows={5}
                         value={formState.message}
