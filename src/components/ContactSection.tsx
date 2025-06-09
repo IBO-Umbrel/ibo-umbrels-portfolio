@@ -19,6 +19,12 @@ interface ContactSectionProps {
   id?: string;
 }
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
 const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
   const [formState, setFormState] = useState({
     name: "",
@@ -49,7 +55,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formState).toString()
+        body: encode({ "form-name": "contact", ...formState })
       });
 
       setFormStatus("success");
@@ -215,14 +221,14 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
                   </Alert>
                 )}
 
-                <form name="contact" className="space-y-4" method="POST" onSubmit={handleSubmit} data-netlify="true">
+                <form name="contact" className="space-y-4" onSubmit={handleSubmit} data-netlify="true">
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="grid grid-cols-1 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name</Label>
                       <Input
                         id="name"
-                        name="contact"
+                        name="name"
                         placeholder="Your name"
                         value={formState.name}
                         onChange={handleChange}
@@ -234,7 +240,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
                       <Label htmlFor="email">Email</Label>
                       <Input
                         id="email"
-                        name="contact"
+                        name="email"
                         type="email"
                         placeholder="Your email address"
                         value={formState.email}
@@ -247,7 +253,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
                       <Label htmlFor="subject">Subject</Label>
                       <Input
                         id="subject"
-                        name="contact"
+                        name="subject"
                         placeholder="Subject of your message"
                         value={formState.subject}
                         onChange={handleChange}
@@ -259,7 +265,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id = "contact" }) => {
                       <Label htmlFor="message">Message</Label>
                       <Textarea
                         id="message"
-                        name="contact"
+                        name="message"
                         placeholder="Your message"
                         rows={5}
                         value={formState.message}
