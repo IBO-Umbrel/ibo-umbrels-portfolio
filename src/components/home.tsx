@@ -80,6 +80,14 @@ const HomePage = () => {
                                     Contact
                                 </a>
                             </li>
+                            <li>
+                                <a
+                                    href="#sendmessage"
+                                    className="hover:text-primary transition-colors"
+                                >
+                                    Send a Message
+                                </a>
+                            </li>
                         </ul>
 
                         <Button
@@ -179,6 +187,15 @@ const HomePage = () => {
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
                                         Contact
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#sendmessage"
+                                        className="block hover:text-primary transition-colors"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Send a Message
                                     </a>
                                 </li>
                             </ul>
