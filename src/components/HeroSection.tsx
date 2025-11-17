@@ -16,7 +16,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({
-  name = "Ibrohimjon Toshtemirov",
+  name = "Ibrohimjon. Toshtemirov.",
   roles = ["Full-stack Engineer", "Web Developer", "Mobile App Developer"],
   bio = "I am a full-stack developer with 3 years of personal experience. I build web, mobile, and desktop applications using tools like React.js, Expo, Express.js, and more. I'm currently studying Software Engineering at Millat Umidi University.",
   email = "ibo.umbrella@gmail.com",
