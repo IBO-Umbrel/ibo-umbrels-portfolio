@@ -16,7 +16,6 @@ interface ProjectCardProps {
   title: string;
   description: string;
   technologies: string[];
-  imageUrl?: string;
   liveUrl?: string;
   githubUrl?: string;
 }
@@ -25,7 +24,6 @@ const ProjectCard = ({
   title = "Project Title",
   description = "A brief description of the project and its features.",
   technologies = ["React", "TypeScript", "Tailwind CSS"],
-  imageUrl = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
   liveUrl,
   githubUrl,
 }: ProjectCardProps) => {
@@ -38,7 +36,7 @@ const ProjectCard = ({
       className="h-full"
     >
       <Card className="h-full flex flex-col overflow-hidden group bg-card border-2 hover:border-primary/50 transition-all duration-300">
-        {imageUrl && (
+        {/* {imageUrl && (
           <div className="relative overflow-hidden h-48">
             <img
               src={imageUrl}
@@ -46,7 +44,7 @@ const ProjectCard = ({
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
           </div>
-        )}
+        )} */}
         <CardHeader>
           <CardTitle className="text-xl">{title}</CardTitle>
           <CardDescription className="line-clamp-2">
