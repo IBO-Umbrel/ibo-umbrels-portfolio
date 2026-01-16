@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -6,7 +5,7 @@ import { Mail, Phone, Github, ExternalLink } from "lucide-react";
 
 interface HeroSectionProps {
   name?: string;
-  roles?: string[];
+  role?: string;
   bio?: string;
   email?: string;
   phone?: string;
@@ -17,7 +16,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({
   name = "Ibrohimjon Toshtemirov",
-  roles = ["Full-stack Engineer", "Web Developer", "Mobile App Developer"],
+  role = "Full-stack Engineer",
   bio = "I am a full-stack developer with 3 years of personal experience. I build web, mobile, and desktop applications using tools like React.js, Expo, Express.js, and more. I'm currently studying Software Engineering at Millat Umidi University.",
   email = "ibo.umbrella@gmail.com",
   phone = "+998951309955",
@@ -25,15 +24,6 @@ const HeroSection = ({
   github = "https://github.com/IBO-Umbrel",
   avatarUrl = "/me.jpg",
 }: HeroSectionProps) => {
-  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [roles.length]);
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center py-16 px-4 md:px-8 lg:px-16 bg-background">
@@ -56,13 +46,14 @@ const HeroSection = ({
           >
             <motion.h2
               className="text-xl md:text-2xl text-primary font-medium"
-              key={currentRoleIndex}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
+              // key={currentRoleIndex}
+              // initial={{ opacity: 0, y: 10 }}
+              // animate={{ opacity: 1, y: 0 }}
+              // exit={{ opacity: 0, y: -10 }}
+              // transition={{ duration: 0.3 }}
             >
-              {roles[currentRoleIndex]}
+              {/* {roles[currentRoleIndex]} */}
+              {role}
             </motion.h2>
           </motion.div>
 
