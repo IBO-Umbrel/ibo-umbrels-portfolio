@@ -83,9 +83,9 @@ const defaultProjects: Project[] = [
         githubUrl: "https://github.com/IBO-Umbrel/umbrella-library"
     },
     {
-        title: "Uoffice",
+        title: "Golden Silk Finance Manager - Android app",
         description:
-            "Application for managing company salaries and revenue with detailed analytics.",
+            "This is an app I built for a company. It helps company to manage and analyze workers salary, and income revenue inside their phone.",
         technologies: ["React Native", "Expo", "Firebase"],
         githubUrl: "https://github.com/IBO-Umbrel/Uoffice"
     },
